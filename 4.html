@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando</title>
+    <style>
+        body {
+            color: rgb(0, 0, 0);
+            background-color: rgb(128, 236, 240);
+            font-size: 20pt;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        } div {
+            color: rgb(255, 166, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando</h1>
+    <h5>Digite o primeiro valor : <input type="number" id="p1"></h5>
+    <h5>Digite o segundo valor : <input type="number" id="p2"></h5>
+    <h5>Digite o terceiro valor : <input type="number" id="p3"></h5>
+    <input type="button" value="resultado" id="p4">
+    <div id="p5"></div>
+    <br>
+    <br>
+    <hr>
+    <h5>Digite o primeiro valor : <input type="number" id="z1"></h5>
+    <input type="button" value="resultado" id="z2">
+    <div id="z3"></div>
+    <br>
+    <br>
+    <hr>
+    <h5>Digite a repetição : <input type="number" id="d1"></h5>
+    <input type="button" value="resultado" id="d2">
+    <div id="d3"></div>
+    <br>
+    <br>
+    <hr>
+    <a href="lobby.html">Back</a>
+    <script>
+        var px1 = document.getElementById('p1');
+        var px2 = document.getElementById('p2');
+        var px3 = document.getElementById('p3');
+        var px4 = document.getElementById('p4');
+        var px5 = document.getElementById('p5');
+        var zx1 = document.getElementById('z1');
+        var zx2 = document.getElementById('z2');
+        var zx3 = document.getElementById('z3');
+        var dx1 = document.getElementById('d1');
+        var dx2 = document.getElementById('d2');
+        var dx3 = document.getElementById('d3');
+        px4.addEventListener('click', () => {
+            px5.innerHTML = ``;
+            var pxn1 = Number(px1.value);
+            var pxn2 = Number(px2.value);
+            var pxn3 = Number(px3.value);
+            var c = 0;
+            for(var i = 1; i <= pxn2; i++) {
+                px5.innerHTML += `${pxn1} * ${i} = ${pxn1*i} <br>`;
+                c++;
+                if(c == pxn3) {
+                    px5.innerHTML += `<br>`;
+                    c = 0;
+                }
+            }
+
+        })
+        zx2.addEventListener('click', () => {
+            var zxn1 = Number(zx1.value);
+            var acumuladora = 0;
+            for(var i=1; acumuladora < zxn1; i++) {
+                acumuladora += i;
+                zx3.innerHTML += `${acumuladora} <br>`;
+            }
+        })
+        dx2.addEventListener('click', () => {
+            var dxn1 = Number(dx1.value);
+            var ant = 0;
+            var atb = 1;
+            var c = 0;
+            for(var f = 1; f <= dxn1; f++) {
+                dx3.innerHTML += `${ant} <br>`;
+                c = ant;
+                ant += atb;
+                atb = c;
+            }
+        })
+    </script>
+</body>
+</html>
